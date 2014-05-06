@@ -1,0 +1,10 @@
+item.armory:obsidium_chunk.name=Chunk of Obsidium
+item.armory:azurite_chunk.name=Chunk of Azurite
+item.armory:crimsonite_chunk.name=Chunk of Crimsonite
+item.armory:titanium_chunk.name=Chunk of Titanium
+armory:smithing_anvil.name=Smithing Anvil
+armory:smithing_furnace.name=Smithing Furnace
+
+
+
+itemGroup.armory=Armory

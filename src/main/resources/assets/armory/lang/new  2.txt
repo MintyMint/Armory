@@ -1,0 +1,1 @@
+ Minty: in your structure generating method: if( !hasMadeChest ) { hasMadeChest = true; /* remember to save that to NBT! */ generateStructureChestContents(world, bb, rnd, x, y, z, ChestGenHooks.getItems("chest_id", rnd), ChestGenHooks.getCount("chest_id", rnd)); }
