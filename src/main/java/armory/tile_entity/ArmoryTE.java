@@ -1,23 +1,23 @@
 package armory.tile_entity;
 
-import armory.lib.ArmoryNames;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
+import armory.lib.ArmoryNames;
 
 public class ArmoryTE extends TileEntity
 {
     protected ForgeDirection orientation;
-    protected byte state;
     protected String customName;
-    protected String owner;
 
     public ArmoryTE()
     {
-        if (orientation == null){orientation = ForgeDirection.SOUTH;}
-        state = 0;
+    	orientation = ForgeDirection.SOUTH;
         customName = "";
-        owner = "";
+
     }
 
     public ForgeDirection getOrientation()
@@ -33,16 +33,6 @@ public class ArmoryTE extends TileEntity
     public void setOrientation(int orientation)
     {
         this.orientation = ForgeDirection.getOrientation(orientation);
-    }
-
-    public short getState()
-    {
-        return state;
-    }
-
-    public void setState(byte state)
-    {
-        this.state = state;
     }
 
     public boolean hasCustomName()
@@ -70,7 +60,6 @@ public class ArmoryTE extends TileEntity
             this.orientation = ForgeDirection.getOrientation(nbtTagCompound.getByte(ArmoryNames.NBT.DIRECTION));
         }
 
-
         if (nbtTagCompound.hasKey(ArmoryNames.NBT.CUSTOM_NAME))
         {
             this.customName = nbtTagCompound.getString(ArmoryNames.NBT.CUSTOM_NAME);
@@ -89,5 +78,19 @@ public class ArmoryTE extends TileEntity
         {
             nbtTagCompound.setString(ArmoryNames.NBT.CUSTOM_NAME, customName);
         }
+    }
+    
+    @Override
+    public Packet getDescriptionPacket ()
+    {
+        NBTTagCompound tag = new NBTTagCompound();
+        writeToNBT(tag);
+        return new S35PacketUpdateTileEntity(xCoord, yCoord, zCoord, 1, tag);
+    }
+    
+    @Override
+    public void onDataPacket (NetworkManager net, S35PacketUpdateTileEntity packet)
+    {
+        readFromNBT(packet.func_148857_g());
     }
 }

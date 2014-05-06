@@ -99,19 +99,23 @@ public class SmithingFurnace extends BlockContainer
             {
                 direction = ForgeDirection.NORTH.ordinal();
             }
+            
             else if (facing == 1)
             {
                 direction = ForgeDirection.EAST.ordinal();
             }
+            
             else if (facing == 2)
             {
                 direction = ForgeDirection.SOUTH.ordinal();
             }
             else if (facing == 3)
+            
             {
                 direction = ForgeDirection.WEST.ordinal();
             }
 
+            
             if (itemStack.hasDisplayName())
             {
                 ((ArmoryTE) world.getTileEntity(x, y, z)).setCustomName(itemStack.getDisplayName());
