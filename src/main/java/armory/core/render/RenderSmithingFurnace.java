@@ -10,7 +10,7 @@ import net.minecraftforge.common.util.ForgeDirection;
 import org.lwjgl.opengl.GL11;
 
 import armory.lib.ArmoryRef;
-import armory.tile_entity.TileSmithingFurnace;
+import armory.tile_entity.smithing_furnace.TileSmithingFurnace;
 import cpw.mods.fml.client.FMLClientHandler;
 
 public class RenderSmithingFurnace extends TileEntitySpecialRenderer

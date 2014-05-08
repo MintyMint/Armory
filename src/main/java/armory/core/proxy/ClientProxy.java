@@ -2,7 +2,7 @@ package armory.core.proxy;
 
 import armory.core.render.RenderOreBlock;
 import armory.core.render.RenderSmithingFurnace;
-import armory.tile_entity.TileSmithingFurnace;
+import armory.tile_entity.smithing_furnace.TileSmithingFurnace;
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 

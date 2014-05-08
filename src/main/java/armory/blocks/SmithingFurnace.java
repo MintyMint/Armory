@@ -15,12 +15,12 @@ import armory.Armory;
 import armory.lib.ArmoryNames;
 import armory.lib.ArmoryRef;
 import armory.tile_entity.ArmoryTE;
-import armory.tile_entity.TileSmithingFurnace;
+import armory.tile_entity.smithing_furnace.TileSmithingFurnace;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class SmithingFurnace extends BlockContainer
+public class SmithingFurnace extends ArmoryBlocks implements ITileEntityProvider
 {
 	public SmithingFurnace()
 	{
@@ -55,7 +55,6 @@ public class SmithingFurnace extends BlockContainer
 	{
 		return true;
 	}
-	 
 	
 	@Override
 	public TileEntity createNewTileEntity(World var1, int var2)
@@ -69,59 +68,11 @@ public class SmithingFurnace extends BlockContainer
 		player.openGui(Armory.instance, 1, world, x ,y, z); return true;
 	}
 	
-	public String getUnwrappedUnlocalizedName(String unlocalizedName)
-	{
-		return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
-	}
-	
-	@Override
-	public String getUnlocalizedName()
-	{
-	     return String.format("%s%s", ArmoryRef.RESOURCES_PREFIX, getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
-	}
-	
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister iconRegister)
 	{
-		this.blockIcon = iconRegister.registerIcon(ArmoryRef.RESOURCES_PREFIX + getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+		this.blockIcon = iconRegister.registerIcon(getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
 	}
 	
-    @Override
-    public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase entityLiving, ItemStack itemStack)
-    {
-        if (world.getTileEntity(x, y, z) instanceof ArmoryTE)
-        {
-            int direction = 0;
-            int facing = MathHelper.floor_double(entityLiving.rotationYaw * 4.0F / 360.0F + 0.5D) & 3;
-
-            if (facing == 0)
-            {
-                direction = ForgeDirection.NORTH.ordinal();
-            }
-            
-            else if (facing == 1)
-            {
-                direction = ForgeDirection.EAST.ordinal();
-            }
-            
-            else if (facing == 2)
-            {
-                direction = ForgeDirection.SOUTH.ordinal();
-            }
-            else if (facing == 3)
-            
-            {
-                direction = ForgeDirection.WEST.ordinal();
-            }
-
-            
-            if (itemStack.hasDisplayName())
-            {
-                ((ArmoryTE) world.getTileEntity(x, y, z)).setCustomName(itemStack.getDisplayName());
-            }
-
-            ((ArmoryTE) world.getTileEntity(x, y, z)).setOrientation(direction);
-        }
-    }
 }

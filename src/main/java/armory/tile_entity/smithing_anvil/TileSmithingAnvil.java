@@ -1,4 +1,4 @@
-package armory.tile_entity;
+package armory.tile_entity.smithing_anvil;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;

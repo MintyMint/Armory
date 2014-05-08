@@ -2,8 +2,8 @@ package armory.core.proxy;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import armory.tile_entity.ArmoryTE;
-import armory.tile_entity.TileSmithingAnvil;
-import armory.tile_entity.TileSmithingFurnace;
+import armory.tile_entity.smithing_anvil.TileSmithingAnvil;
+import armory.tile_entity.smithing_furnace.TileSmithingFurnace;
 
 public class CommonProxy
 {

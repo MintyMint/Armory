@@ -1,6 +1,8 @@
-package armory.gui;
+package armory.tile_entity;
 
-import armory.tile_entity.TileSmithingAnvil;
+import armory.tile_entity.smithing_anvil.ContainerSmithingAnvil;
+import armory.tile_entity.smithing_anvil.GuiSmithingAnvil;
+import armory.tile_entity.smithing_anvil.TileSmithingAnvil;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import cpw.mods.fml.common.network.IGuiHandler;

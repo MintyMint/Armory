@@ -1,5 +1,6 @@
-package armory.tile_entity;
+package armory.tile_entity.smithing_furnace;
 
+import armory.tile_entity.ArmoryTE;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;

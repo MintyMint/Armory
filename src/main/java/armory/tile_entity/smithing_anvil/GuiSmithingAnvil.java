@@ -1,11 +1,10 @@
-package armory.gui;
+package armory.tile_entity.smithing_anvil;
 
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.util.ResourceLocation;
 import armory.lib.ArmoryRef;
-import armory.tile_entity.TileSmithingAnvil;
 
 public class GuiSmithingAnvil extends GuiContainer
 {

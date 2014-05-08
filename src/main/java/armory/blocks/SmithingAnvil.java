@@ -1,6 +1,7 @@
 package armory.blocks;
 
 import net.minecraft.block.BlockContainer;
+import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
@@ -11,12 +12,12 @@ import armory.Armory;
 import armory.core.ItemHelper;
 import armory.lib.ArmoryNames;
 import armory.lib.ArmoryRef;
-import armory.tile_entity.TileSmithingAnvil;
+import armory.tile_entity.smithing_anvil.TileSmithingAnvil;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class SmithingAnvil extends BlockContainer
+public class SmithingAnvil extends ArmoryBlocks implements ITileEntityProvider
 {	
 	public SmithingAnvil()
     {
@@ -25,47 +26,36 @@ public class SmithingAnvil extends BlockContainer
         this.setCreativeTab(Armory.getCreativeTab());
         GameRegistry.registerBlock(this, this.getUnlocalizedName());
     }
-	
-	   @Override
-	   public boolean hasTileEntity(int meta)
-	   {
-	       return true;
-	   }
-	 
-	   @Override
-	   public TileEntity createNewTileEntity(World var1, int var2)
-	   {
-	       return new TileSmithingAnvil();
-	   }
-	   
-	   @Override
-	   public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par1, float par2, float par3, float par4)
-	   {
-	       TileEntity attachedTE = world.getTileEntity(x, y, z);
-		   
-		   if (player.isSneaking() == true){ player.openGui(Armory.instance, 0, world, x ,y, z); return true;}
-	       
-	       else if (player.getHeldItem().getItem() == ItemHelper.titaniumOre){ ((TileSmithingAnvil) attachedTE).increaseProgress(); }
-    
-	       return false;
-	   }
-	   
-		public String getUnwrappedUnlocalizedName(String unlocalizedName)
-		{
-			return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
-		}
-		
-		@Override
-		public String getUnlocalizedName()
-		{
-		     return String.format("%s%s", ArmoryRef.RESOURCES_PREFIX, getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
-		}
-		
-		@Override
-		@SideOnly(Side.CLIENT)
-		public void registerBlockIcons(IIconRegister iconRegister)
-		{
-			this.blockIcon = iconRegister.registerIcon(ArmoryRef.RESOURCES_PREFIX + getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
-		}
 
+	@Override
+	public boolean hasTileEntity(int meta)
+	{
+		return true;
+	}
+ 
+	@Override
+	public TileEntity createNewTileEntity(World var1, int var2)
+	{
+		return new TileSmithingAnvil();
+	}
+   
+	@Override
+	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par1, float par2, float par3, float par4)
+	{
+		TileEntity attachedTE = world.getTileEntity(x, y, z);
+
+		if (player.isSneaking() == true){ player.openGui(Armory.instance, 0, world, x ,y, z); return true;}
+
+		else if (player.getHeldItem().getItem() == ItemHelper.titaniumOre ){ ((TileSmithingAnvil) attachedTE).increaseProgress();}
+
+		return false;
+	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void registerBlockIcons(IIconRegister iconRegister)
+	{
+		this.blockIcon = iconRegister.registerIcon(getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+	}
+	
 }

@@ -1,11 +1,10 @@
-package armory.gui;
+package armory.tile_entity.smithing_anvil;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
-import armory.tile_entity.TileSmithingAnvil;
 
 public class ContainerSmithingAnvil extends Container
 {
