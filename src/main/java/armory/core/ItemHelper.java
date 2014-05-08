@@ -4,6 +4,7 @@ import armory.items.ArmoryItems;
 import armory.items.AzuriteOre;
 import armory.items.CrimsoniteOre;
 import armory.items.ObsidiumOre;
+import armory.items.SmithingHammer;
 import armory.items.TitaniumOre;
 import net.minecraft.item.Item;
 import net.minecraftforge.oredict.OreDictionary;
@@ -23,12 +24,16 @@ public class ItemHelper
 	public static Item titaniumOre;
 	public static Item titaniumIngot;
 	
+	public static Item smithingHammer;
+	
 	public static void init()
 	{
 		obsidiumOre = new ObsidiumOre();
 		azuriteOre = new AzuriteOre();
 		crimsoniteOre = new CrimsoniteOre();
 		titaniumOre = new TitaniumOre();
+		
+		smithingHammer = new SmithingHammer();
 		
 	}
 	

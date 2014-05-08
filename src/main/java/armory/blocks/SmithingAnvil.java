@@ -46,7 +46,12 @@ public class SmithingAnvil extends ArmoryBlocks implements ITileEntityProvider
 
 		if (player.isSneaking() == true){ player.openGui(Armory.instance, 0, world, x ,y, z); return true;}
 
-		else if (player.getHeldItem().getItem() == ItemHelper.titaniumOre ){ ((TileSmithingAnvil) attachedTE).increaseProgress();}
+		if (player.getHeldItem() != null && player.getHeldItem().getItem() == ItemHelper.smithingHammer)
+		{
+			((TileSmithingAnvil) attachedTE).increaseProgress();
+			player.getHeldItem().damageItem(1, player);
+			
+		}
 
 		return false;
 	}

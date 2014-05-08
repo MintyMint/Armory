@@ -31,6 +31,8 @@ public class ArmoryNames
 		
 		public static final String TITANIUM_CHUNK_NAME = "titanium_chunk";
 		public static final String TITANIUM_INGOT_NAME = "titanium_ingot";
+		
+		public static final String SMITHING_HAMMER_NAME = "smithing_hammer";
 	}
 	
 	public static class NBT
