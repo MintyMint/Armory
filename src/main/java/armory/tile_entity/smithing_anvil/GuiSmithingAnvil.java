@@ -8,7 +8,7 @@ import armory.lib.ArmoryRef;
 
 public class GuiSmithingAnvil extends GuiContainer
 {
-    private static final ResourceLocation backgroundImage = new ResourceLocation(ArmoryRef.MOD_ID.toLowerCase() + ":" + "textures/gui/mygui.png");
+    private static final ResourceLocation backgroundImage = ArmoryRef.SMITHING_ANVIL_GUI;
     private static TileSmithingAnvil tileEntity;
 	
 	public GuiSmithingAnvil(InventoryPlayer playerInventory,TileSmithingAnvil tileSmithingAnvil)

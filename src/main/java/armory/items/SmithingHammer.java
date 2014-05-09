@@ -17,14 +17,5 @@ public class SmithingHammer extends ArmoryItems
         this.maxStackSize = 1;
         
         ItemHelper.registerItems(this);
-    }
-    
-    /*@Override
-    public ItemStack onItemRightClick(ItemStack itemstack, World worldorld, EntityPlayer player)
-    {
-        if 
-    	itemstack.damageItem(1, player);
-        return itemstack;
-    }*/
-    
+    }  
 }

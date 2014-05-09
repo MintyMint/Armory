@@ -16,9 +16,10 @@ public class TileSmithingAnvil extends TileEntity implements IInventory
     
     public int progress = 0;
     
-    public void increaseProgress()
+    public boolean increaseProgress()
     {
-    	if(progress != progressMax){ progress++; }
+    	if(progress != progressMax){ progress++; return true;}
+    	return false;
     }
  
     //Initializes our inventory.

@@ -1,4 +1,4 @@
-package armory.tile_entity;
+package armory.gui;
 
 import armory.tile_entity.smithing_anvil.ContainerSmithingAnvil;
 import armory.tile_entity.smithing_anvil.GuiSmithingAnvil;

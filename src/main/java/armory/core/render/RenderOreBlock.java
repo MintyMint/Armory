@@ -24,7 +24,7 @@ public class RenderOreBlock implements ISimpleBlockRenderingHandler
             
         	block.setBlockBoundsForItemRender();
             
-        	GL11.glTranslatef(-0.5F, -0.5F, -0.5F);
+        	//GL11.glTranslatef(-0.5F, -0.5F, -0.5F);
 
             //top renderFaceYPos//
         	tessellator.startDrawingQuads();
@@ -86,7 +86,7 @@ public class RenderOreBlock implements ISimpleBlockRenderingHandler
         	renderer.renderFaceXNeg(block, 0.0D, 0.0D, 0.0D, handlerBlock.blockIcons[metadata]);
         	tessellator.draw();
             
-            GL11.glTranslatef(0.5F, 0.5F, 0.5F);
+            //GL11.glTranslatef(0.5F, 0.5F, 0.5F);
         }
 	}
 
