@@ -17,7 +17,7 @@ public class ArmoryRef
 	
 	//models//
 	public static final ResourceLocation SMITHING_FURNACE_MODEL = getResourceLocation(MOD_ID, MODELS_LOCATION + "smithing_furnace.obj");
-	public static final ResourceLocation SMITHING_FURNACE_TEXTURE = getResourceLocation(MOD_ID, "textures/blocks/smithing_furnace.png");
+	public static final ResourceLocation SMITHING_FURNACE_TEXTURE = getResourceLocation(MOD_ID, MODELS_LOCATION + "smithing_furnace.png");
 		
 	//GUIs//
 	public static final ResourceLocation SMITHING_ANVIL_GUI = getResourceLocation(MOD_ID, "textures/gui/smithing_anvil_gui.png");

@@ -55,7 +55,7 @@ public class SmithingAnvil extends ArmoryBlocks implements ITileEntityProvider
 				{ player.inventory.setInventorySlotContents(player.inventory.currentItem, new ItemStack(ItemHelper.smithingHammer_broken)); }
 			}
 				
-			
+			return true;
 		}
 
 		return false;
