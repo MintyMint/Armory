@@ -83,7 +83,7 @@ public class ArmoryOre extends ArmoryBlocks
     @Override
     public boolean isOpaqueCube()
     {
-        return true;
+        return false;
     }
     
     

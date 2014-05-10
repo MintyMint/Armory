@@ -15,6 +15,7 @@ public class SmithingHammer extends ArmoryItems
         this.setCreativeTab(Armory.getCreativeTab());
         this.setMaxDamage(12);
         this.maxStackSize = 1;
+        this.setContainerItem(ItemHelper.smithingHammer_broken);
         
         ItemHelper.registerItems(this);
     }  

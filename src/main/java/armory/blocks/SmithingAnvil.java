@@ -49,7 +49,12 @@ public class SmithingAnvil extends ArmoryBlocks implements ITileEntityProvider
 		if (player.getHeldItem() != null && player.getHeldItem().getItem() == ItemHelper.smithingHammer)
 		{
 			((TileSmithingAnvil) attachedTE).increaseProgress();
-			player.getHeldItem().damageItem(1, player);
+			if (player.getHeldItem().attemptDamageItem(1, null) == true)
+			{
+				if (player.getHeldItem() != null && player.getHeldItem().getItem() == ItemHelper.smithingHammer)
+				{ player.inventory.setInventorySlotContents(player.inventory.currentItem, new ItemStack(ItemHelper.smithingHammer_broken)); }
+			}
+				
 			
 		}
 

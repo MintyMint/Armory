@@ -4,7 +4,6 @@ public class ArmoryNames
 {
 	public static class Blocks
 	{
-		//Block Names//
 		public static final String ORE_BLOCK_NAME = "ArmoryOre";
 		
 		public static final String OBSIDIUM_BLOCK_NAME = "obsidium_block";
@@ -19,7 +18,6 @@ public class ArmoryNames
 	
 	public static class Items
 	{
-		//Item Names//
 		public static final String OBSIDIUM_CHUNK_NAME = "obsidium_chunk";
 		public static final String OBSIDIUM_INGOT_NAME = "obsidium_ingot";
 		
@@ -33,6 +31,7 @@ public class ArmoryNames
 		public static final String TITANIUM_INGOT_NAME = "titanium_ingot";
 		
 		public static final String SMITHING_HAMMER_NAME = "smithing_hammer";
+		public static final String SMITHING_HAMMER_BROKEN_NAME = "smithing_hammer_broken";
 	}
 	
 	public static class NBT
