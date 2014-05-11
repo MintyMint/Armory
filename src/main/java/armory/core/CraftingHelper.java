@@ -1,5 +1,6 @@
 package armory.core;
 
+import armory.lib.ArmoryOreRef;
 import cpw.mods.fml.common.registry.GameData;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
@@ -16,21 +17,22 @@ public class CraftingHelper
 {
 	public static void init()
 	{
-		registerOreDictionary();
+		registerVanillaOreDictionary();
 		registerRecipes();
 	}
 
-	private static void registerOreDictionary()
+	private static void registerVanillaOreDictionary()
 	{
 		OreDictionary.registerOre("ingotIron", Items.iron_ingot);
 	}
 	
 	private static void registerRecipes()
 	{
-		GameRegistry.addSmelting(new ItemStack(BlockHelper.armoryOre, 1, 0) , new ItemStack(ItemHelper.oreChunks, 1, 0), 1f);
-		GameRegistry.addSmelting(new ItemStack(BlockHelper.armoryOre, 1, 1) , new ItemStack(ItemHelper.oreChunks, 1, 1), 1f);
-		GameRegistry.addSmelting(new ItemStack(BlockHelper.armoryOre, 1, 2) , new ItemStack(ItemHelper.oreChunks, 1, 2), 1f);
-		GameRegistry.addSmelting(new ItemStack(BlockHelper.armoryOre, 1, 3) , new ItemStack(ItemHelper.oreChunks, 1, 3), 1f);
+        for (int meta = 0; meta < ArmoryOreRef.oreTypes.length; meta++)
+        {
+        	GameRegistry.addSmelting(new ItemStack(BlockHelper.armoryOre, 1, meta) , new ItemStack(ItemHelper.oreChunks, 1, meta), 1f);
+        	GameRegistry.addSmelting(new ItemStack(ItemHelper.oreChunks, 1, meta) , new ItemStack(ItemHelper.oreIngots, 1, meta), 1f);
+        }
 		
 		GameRegistry.addRecipe(new ShapelessOreRecipe(ItemHelper.smithingHammer, ItemHelper.smithingHammer_broken, "ingotIron", "ingotIron"));
 	}

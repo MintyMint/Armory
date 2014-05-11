@@ -32,7 +32,7 @@ public class ItemHelper
 	
 	public static void registerOreDictionary()
 	{
-		OreDictionary.registerOre("oreObsidium", new ItemStack(oreChunks, 1));
+		OreDictionary.registerOre("oreObsidium", new ItemStack(oreChunks, 1, 0));
 		//OreDictionary.registerOre("ingotObsidium", obsidiumIngot);
 		
 		//OreDictionary.registerOre("oreAzurite", azuriteOre);
