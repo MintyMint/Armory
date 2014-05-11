@@ -39,10 +39,10 @@ public class ArmoryOre extends ArmoryBlocks
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister iconRegister)
     {
-        for(int i = 0; i < blockIcons.length; i++)
+        for(int count = 0; count < blockIcons.length; count++)
         {
             String icon;
-            switch(i)
+            switch(count)
             {
                 case 0: icon = "Lava_Overlay"; break;
                 case 1: icon = "Azurite_Overlay"; break;
@@ -53,7 +53,7 @@ public class ArmoryOre extends ArmoryBlocks
 
                 default: icon = "Ore_Glitter";
             }
-            blockIcons[i] = iconRegister.registerIcon(getUnwrappedUnlocalizedName(super.getUnlocalizedName()) + "_" + icon);
+            blockIcons[count] = iconRegister.registerIcon(getUnwrappedUnlocalizedName(super.getUnlocalizedName()) + "_" + icon);
         }
     }
     
@@ -71,9 +71,10 @@ public class ArmoryOre extends ArmoryBlocks
     	ArrayList<ItemStack> itemDropped = new ArrayList<ItemStack>();
         ArrayList<ItemStack> possibleDropped = new ArrayList<ItemStack>();
         
-        possibleDropped.add(new ItemStack(ItemHelper.obsidiumOre, 1));
-        possibleDropped.add(new ItemStack(ItemHelper.azuriteOre, 1));
-        possibleDropped.add(new ItemStack(ItemHelper.crimsoniteOre, 1));
+        possibleDropped.add(new ItemStack(ItemHelper.oreChunks, 1, 0));
+        possibleDropped.add(new ItemStack(ItemHelper.oreChunks, 1, 1));
+        possibleDropped.add(new ItemStack(ItemHelper.oreChunks, 1, 2));
+        possibleDropped.add(new ItemStack(ItemHelper.oreChunks, 1, 3));
         
         itemDropped.add(possibleDropped.get(metadata));
         

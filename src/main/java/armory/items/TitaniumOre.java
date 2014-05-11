@@ -11,6 +11,6 @@ public class TitaniumOre extends ArmoryItems
     {
         this.setUnlocalizedName(ArmoryNames.Items.TITANIUM_CHUNK_NAME);
         this.setCreativeTab(Armory.getCreativeTab());
-        ItemHelper.registerItems(this);
+        //ItemHelper.registerItems(this);
     }
 }

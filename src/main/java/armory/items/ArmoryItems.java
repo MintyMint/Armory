@@ -3,6 +3,7 @@ package armory.items;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import armory.core.ConfigHelper;
 import armory.lib.ArmoryRef;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -31,5 +32,10 @@ public class ArmoryItems extends Item
     public void registerIcons(IIconRegister iconRegister)
     {
         this.itemIcon = iconRegister.registerIcon(ArmoryRef.RESOURCES_PREFIX + getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+    }
+    
+    public int getIntColorFromHex(String hexColor)
+    {
+		return Integer.parseInt(hexColor, 16);	
     }
 }

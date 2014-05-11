@@ -46,7 +46,7 @@ public class RenderOreBlock extends BlockRenderer implements ISimpleBlockRenderi
         	else if (metadata == 3)
         	{
         		GL11.glColor3f(1f, 1f,1f);
-        		drawFaces(renderer, block, handlerBlock.blockIcons[4]);
+        		drawFaces(renderer, block, handlerBlock.blockIcons[5]);
         	}
         	
         	

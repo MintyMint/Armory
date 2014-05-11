@@ -14,6 +14,6 @@ public class ArmoryTab extends CreativeTabs
     @Override
     public Item getTabIconItem()
     {
-        return ItemHelper.obsidiumOre;
+        return Item.getItemFromBlock(BlockHelper.smithingFurnace);
     }
 }

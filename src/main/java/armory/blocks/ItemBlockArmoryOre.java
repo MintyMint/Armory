@@ -1,13 +1,12 @@
 package armory.blocks;
 
+import armory.lib.ArmoryOreRef;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
 public class ItemBlockArmoryOre extends ItemBlock
 {
-	public static final String[] oreTypes = {"Obsidium", "Azurite", "Crimsonite", "Titanium"};
-	
 	public ItemBlockArmoryOre(Block block)
 	{
 		super(block);
@@ -15,9 +14,9 @@ public class ItemBlockArmoryOre extends ItemBlock
 	}
 
 	@Override
-	public String getItemStackDisplayName(ItemStack is)
+	public String getItemStackDisplayName(ItemStack itemstack)
 	{
-		return oreTypes[is.getItemDamage()] + " Ore";
+		return ArmoryOreRef.oreTypes[itemstack.getItemDamage()] + " Ore";
 	}
 
 	@Override

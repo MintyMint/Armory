@@ -18,6 +18,10 @@ public class ArmoryNames
 	
 	public static class Items
 	{
+		public static final String ORE_CHUNKS_NAME = "ore_chunks";
+		
+		public static final String ORE_INGOTS_NAME = "ore_ingots";
+		
 		public static final String OBSIDIUM_CHUNK_NAME = "obsidium_chunk";
 		public static final String OBSIDIUM_INGOT_NAME = "obsidium_ingot";
 		
