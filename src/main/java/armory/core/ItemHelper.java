@@ -33,16 +33,16 @@ public class ItemHelper
 	public static void registerOreDictionary()
 	{
 		OreDictionary.registerOre("oreObsidium", new ItemStack(oreChunks, 1, 0));
-		//OreDictionary.registerOre("ingotObsidium", obsidiumIngot);
+		OreDictionary.registerOre("ingotObsidium",  new ItemStack(oreIngots, 1, 0));
 		
-		//OreDictionary.registerOre("oreAzurite", azuriteOre);
-		//OreDictionary.registerOre("ingotTitanium", azuriteIngot);
+		OreDictionary.registerOre("oreAzurite", new ItemStack(oreChunks, 1, 1));
+		OreDictionary.registerOre("ingotTitanium", new ItemStack(oreIngots, 1, 1));
 		
-		//OreDictionary.registerOre("oreCrimsonite", crimsoniteOre);
-		//OreDictionary.registerOre("ingotTitanium", crimsoniteIngot);
+		OreDictionary.registerOre("oreCrimsonite", new ItemStack(oreChunks, 1, 2));
+		OreDictionary.registerOre("ingotTitanium", new ItemStack(oreIngots, 1, 2));
 		
-		//OreDictionary.registerOre("oreTitanium", titaniumOre);
-		//OreDictionary.registerOre("ingotTitanium", titaniumIngot);
+		OreDictionary.registerOre("oreTitanium", new ItemStack(oreChunks, 1, 3));
+		OreDictionary.registerOre("ingotTitanium", new ItemStack(oreIngots, 1, 3));
 	}
 
 	public static void registerItems(ArmoryItems item)
