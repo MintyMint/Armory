@@ -7,6 +7,7 @@ import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
@@ -29,23 +30,36 @@ public class ArmoryOre extends ArmoryBlocks
     
 	@SideOnly(Side.CLIENT)
     public IIcon[] blockIcons;
-    
-    
-    
+      
     public float[] hardnesses = {30f, 4f, 4f, 4.2f};
     
     public float[] resistances = {1750f, 5.5f, 5.5f, 6f};
 	
 	public ArmoryOre()
-    {
+	{
         this.setBlockName(ArmoryNames.Blocks.ORE_BLOCK_NAME);
-        this.setHardness(1f);
-        this.setResistance(3f);
         this.setCreativeTab(Armory.getCreativeTab());
         this.setStepSound(Block.soundTypeGravel);
         BlockHelper.registerBlocksWithMetadata(this, ItemBlockArmoryOre.class, "ore");
         blockIcons = new IIcon[6];
+	}
+	
+	@Override
+    public float getBlockHardness(World world, int x, int y, int z)
+    {
+		if (world.getBlockMetadata(x, y, z) <= this.hardnesses.length)
+		{ return this.hardnesses[world.getBlockMetadata(x, y, z)]; }
+		
+		else return 0.1f;
     }
+	
+	public float getExplosionResistance(Entity par1Entity, World world, int x, int y, int z, double explosionX, double explosionY, double explosionZ)
+	{
+		if (world.getBlockMetadata(x, y, z) <= this.resistances.length)
+		{ return this.resistances[world.getBlockMetadata(x, y, z)]; }
+		
+		else return 0.1f;
+	}
 	
     @Override
     @SideOnly(Side.CLIENT)
