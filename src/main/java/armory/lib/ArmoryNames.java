@@ -14,25 +14,16 @@ public class ArmoryNames
 		
 		public static final String SMITHING_ANVIL_NAME = "smithing_anvil";
 		public static final String SMITHING_FURNACE_NAME = "smithing_furnace";
+		
+		public static final String PART_PLANNER = "part_planner";
 	}
 	
 	public static class Items
 	{
-		public static final String ORE_CHUNKS_NAME = "ore_chunks";
+		public static final String[] ORE_TYPES = {"Obsidium", "Azurite", "Crimsonite", "Titanium"};
 		
+		public static final String ORE_CHUNKS_NAME = "ore_chunks";		
 		public static final String ORE_INGOTS_NAME = "ore_ingots";
-		
-		public static final String OBSIDIUM_CHUNK_NAME = "obsidium_chunk";
-		public static final String OBSIDIUM_INGOT_NAME = "obsidium_ingot";
-		
-		public static final String AZURITE_CHUNK_NAME = "azurite_chunk";
-		public static final String AZURITE_INGOT_NAME = "azurite_ingot";
-		
-		public static final String CRIMSONITE_CHUNK_NAME = "crimsonite_chunk";
-		public static final String CRIMSONITE_INGOT_NAME = "crimsonite_ingot";
-		
-		public static final String TITANIUM_CHUNK_NAME = "titanium_chunk";
-		public static final String TITANIUM_INGOT_NAME = "titanium_ingot";
 		
 		public static final String SMITHING_HAMMER_NAME = "smithing_hammer";
 		public static final String SMITHING_HAMMER_BROKEN_NAME = "smithing_hammer_broken";

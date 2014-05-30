@@ -61,11 +61,6 @@ public class ArmoryBlocks extends Block
                 direction = ForgeDirection.WEST.ordinal();
             }
 
-            if (itemStack.hasDisplayName())
-            {
-                ((ArmoryTE) world.getTileEntity(x, y, z)).setCustomName(itemStack.getDisplayName());
-            }
-
             ((ArmoryTE) world.getTileEntity(x, y, z)).setOrientation(direction);
         }
     }

@@ -36,6 +36,6 @@ public class ArmoryItems extends Item
     
     public int getIntColorFromHex(String hexColor)
     {
-		return Integer.parseInt(hexColor, 16);	
+		return Integer.parseInt(hexColor, 16);
     }
 }

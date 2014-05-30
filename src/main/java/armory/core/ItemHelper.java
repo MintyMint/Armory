@@ -6,15 +6,20 @@ import net.minecraftforge.oredict.OreDictionary;
 import armory.items.ArmoryItems;
 import armory.items.ArmoryOreChunks;
 import armory.items.ArmoryOreIngots;
+import armory.items.CrudeWeaponParts;
+import armory.items.HeatedWeaponParts;
 import armory.items.SmithingHammer;
 import armory.items.SmithingHammerBroken;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ItemHelper
 {
-	public static Item oreChunks;
-	;
+	private static final Item HeatedWeaponParts = null;
+	public static Item oreChunks;	
 	public static Item oreIngots;
+	
+	public static Item crudeWeaponParts;
+	public static Item heatedWeaponParts;
 	
 	public static Item smithingHammer;
 	public static Item smithingHammer_broken;
@@ -22,8 +27,10 @@ public class ItemHelper
 	public static void init()
 	{
 		oreChunks = new ArmoryOreChunks();
-		
 		oreIngots = new ArmoryOreIngots();
+		
+		crudeWeaponParts = new CrudeWeaponParts();
+		heatedWeaponParts = new HeatedWeaponParts();
 		
 		smithingHammer = new SmithingHammer();
 		smithingHammer_broken = new SmithingHammerBroken();
@@ -33,16 +40,16 @@ public class ItemHelper
 	public static void registerOreDictionary()
 	{
 		OreDictionary.registerOre("oreObsidium", new ItemStack(oreChunks, 1, 0));
-		//OreDictionary.registerOre("ingotObsidium", obsidiumIngot);
+		OreDictionary.registerOre("ingotObsidium",  new ItemStack(oreIngots, 1, 0));
 		
-		//OreDictionary.registerOre("oreAzurite", azuriteOre);
-		//OreDictionary.registerOre("ingotTitanium", azuriteIngot);
+		OreDictionary.registerOre("oreAzurite", new ItemStack(oreChunks, 1, 1));
+		OreDictionary.registerOre("ingotTitanium", new ItemStack(oreIngots, 1, 1));
 		
-		//OreDictionary.registerOre("oreCrimsonite", crimsoniteOre);
-		//OreDictionary.registerOre("ingotTitanium", crimsoniteIngot);
+		OreDictionary.registerOre("oreCrimsonite", new ItemStack(oreChunks, 1, 2));
+		OreDictionary.registerOre("ingotTitanium", new ItemStack(oreIngots, 1, 2));
 		
-		//OreDictionary.registerOre("oreTitanium", titaniumOre);
-		//OreDictionary.registerOre("ingotTitanium", titaniumIngot);
+		OreDictionary.registerOre("oreTitanium", new ItemStack(oreChunks, 1, 3));
+		OreDictionary.registerOre("ingotTitanium", new ItemStack(oreIngots, 1, 3));
 	}
 
 	public static void registerItems(ArmoryItems item)

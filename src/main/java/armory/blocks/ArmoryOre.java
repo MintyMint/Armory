@@ -21,8 +21,20 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class ArmoryOre extends ArmoryBlocks
 {
-    @SideOnly(Side.CLIENT)
+	@SideOnly(Side.CLIENT)
+    public IIcon lavaGlint;
+	
+	@SideOnly(Side.CLIENT)
+	public IIcon oreGlint;
+    
+	@SideOnly(Side.CLIENT)
     public IIcon[] blockIcons;
+    
+    
+    
+    public float[] hardnesses = {30f, 4f, 4f, 4.2f};
+    
+    public float[] resistances = {1750f, 5.5f, 5.5f, 6f};
 	
 	public ArmoryOre()
     {
@@ -48,11 +60,12 @@ public class ArmoryOre extends ArmoryBlocks
                 case 1: icon = "Azurite_Overlay"; break;
                 case 2: icon = "Crimsonite_Overlay"; break;
                 case 3: icon = "Titanium_Overlay"; break;
-                case 4: icon = "Lava_Glitter"; break;
-                case 5: icon = "Ore_Glitter"; break;
+                case 4: icon = "Lava_Glint"; break;
+                case 5: icon = "Ore_Glint"; break;
 
-                default: icon = "Ore_Glitter";
+                default: icon = "Ore_Glint";
             }
+            
             blockIcons[count] = iconRegister.registerIcon(getUnwrappedUnlocalizedName(super.getUnlocalizedName()) + "_" + icon);
         }
     }

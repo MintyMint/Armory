@@ -22,6 +22,8 @@ public class ArmoryRef
 	//GUIs//
 	public static final ResourceLocation SMITHING_ANVIL_GUI = getResourceLocation(MOD_ID, "textures/gui/smithing_anvil_gui.png");
 	
+	public static String[] colors = {"FFFFFF", "123456", "AA0000", "FFFFFF"};
+	
     public static ResourceLocation getResourceLocation(String modId, String path)
     {
         return new ResourceLocation(modId, path);

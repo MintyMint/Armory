@@ -3,6 +3,7 @@ package armory.core;
 import cpw.mods.fml.common.registry.GameRegistry;
 import armory.blocks.ArmoryBlocks;
 import armory.blocks.ArmoryOre;
+import armory.blocks.PartPlanner;
 import armory.blocks.SmithingAnvil;
 import armory.blocks.SmithingFurnace;
 import net.minecraft.block.Block;
@@ -18,12 +19,18 @@ public class BlockHelper
 	
 	public static Block smithingFurnace;
 	
+	public static Block partPlanner;
+	
 	
 	public static void init()
 	{
 		armoryOre = new ArmoryOre();
+		
 		smithingAnvil = new SmithingAnvil();
+		
 		smithingFurnace = new SmithingFurnace();
+		
+		partPlanner = new PartPlanner();
 	}
 	
 	public static void registerBlocks(ArmoryBlocks block)

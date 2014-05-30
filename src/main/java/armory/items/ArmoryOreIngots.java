@@ -10,7 +10,7 @@ import net.minecraft.util.IIcon;
 import armory.Armory;
 import armory.core.ItemHelper;
 import armory.lib.ArmoryNames;
-import armory.lib.ArmoryOreRef;
+import armory.lib.ArmoryRef;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -33,14 +33,14 @@ public class ArmoryOreIngots extends ArmoryItems
 	@SideOnly(Side.CLIENT)
     public int getColorFromItemStack(ItemStack itemstack, int par2)
     {
-    	int color = Integer.parseInt(ArmoryOreRef.colors[itemstack.getItemDamage()], 16);
+    	int color = Integer.parseInt(ArmoryRef.colors[itemstack.getItemDamage()], 16);
     	return color;
     }
     
 	@Override
 	public String getItemStackDisplayName(ItemStack itemstack)
     {
-    	String name = ArmoryOreRef.oreTypes[itemstack.getItemDamage()] + " Ingot";
+    	String name = ArmoryNames.Items.ORE_TYPES[itemstack.getItemDamage()] + " Ingot";
     	return name;
     }
 

@@ -1,9 +1,9 @@
 package armory.blocks;
 
-import armory.lib.ArmoryOreRef;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import armory.lib.ArmoryNames;
 
 public class ItemBlockArmoryOre extends ItemBlock
 {
@@ -16,7 +16,7 @@ public class ItemBlockArmoryOre extends ItemBlock
 	@Override
 	public String getItemStackDisplayName(ItemStack itemstack)
 	{
-		return ArmoryOreRef.oreTypes[itemstack.getItemDamage()] + " Ore";
+		return ArmoryNames.Items.ORE_TYPES[itemstack.getItemDamage()] + " Ore";
 	}
 
 	@Override
@@ -24,5 +24,4 @@ public class ItemBlockArmoryOre extends ItemBlock
 	{
 		return meta;
 	}
-
 }

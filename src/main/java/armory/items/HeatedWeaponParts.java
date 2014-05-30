@@ -14,19 +14,19 @@ import armory.lib.ArmoryRef;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ArmoryOreChunks extends ArmoryItems
+public class HeatedWeaponParts extends ArmoryItems
 {
     @SideOnly(Side.CLIENT)
     public IIcon[] chunkIcons;
 	
-	public ArmoryOreChunks()
+	public HeatedWeaponParts()
     {
-    	this.setUnlocalizedName(ArmoryNames.Items.ORE_CHUNKS_NAME);
+    	this.setUnlocalizedName("wip");
     	setHasSubtypes(true);
     	setMaxStackSize(64);
     	setMaxDamage(0);
         setCreativeTab(Armory.getCreativeTab());
-        ItemHelper.registerItems(this);
+        //ItemHelper.registerItems(this);
         chunkIcons = new IIcon[4];
     }
     
