@@ -17,6 +17,7 @@ import armory.core.BlockHelper;
 import armory.core.ItemHelper;
 import armory.core.proxy.ClientProxy;
 import armory.lib.ArmoryNames;
+import armory.lib.ArmoryRef;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -24,12 +25,11 @@ public class ArmoryOre extends ArmoryBlocks
 {
 	@SideOnly(Side.CLIENT)
     public IIcon lavaGlint;
-	
-	@SideOnly(Side.CLIENT)
 	public IIcon oreGlint;
-    
-	@SideOnly(Side.CLIENT)
-    public IIcon[] blockIcons;
+	public IIcon[] overlays = new IIcon[4];
+	public String[] iconNames = { "obsidium_overlay", "azurite_overlay", "crimsonite_overlay", "titanium_overlay" };
+	public int[] colors = { 0xFFFFFF, 0x123456, 0xFF0000, 0xFFFFFF };
+	public int[] brightness = { 200, 225, 150, 0 };
       
     public float[] hardnesses = {30f, 4f, 4f, 4.2f};
     
@@ -41,54 +41,43 @@ public class ArmoryOre extends ArmoryBlocks
         this.setCreativeTab(Armory.getCreativeTab());
         this.setStepSound(Block.soundTypeGravel);
         BlockHelper.registerBlocksWithMetadata(this, ItemBlockArmoryOre.class, "ore");
-        blockIcons = new IIcon[6];
 	}
 	
 	@Override
-    public float getBlockHardness(World world, int x, int y, int z)
-    {
+ 	public float getBlockHardness(World world, int x, int y, int z)
+	{
 		if (world.getBlockMetadata(x, y, z) <= this.hardnesses.length)
 		{ return this.hardnesses[world.getBlockMetadata(x, y, z)]; }
-		
+
 		else return 0.1f;
-    }
+	}
 	
+	@Override
 	public float getExplosionResistance(Entity par1Entity, World world, int x, int y, int z, double explosionX, double explosionY, double explosionZ)
 	{
 		if (world.getBlockMetadata(x, y, z) <= this.resistances.length)
 		{ return this.resistances[world.getBlockMetadata(x, y, z)]; }
-		
+
 		else return 0.1f;
 	}
 	
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister iconRegister)
-    {
-        for(int count = 0; count < blockIcons.length; count++)
-        {
-            String icon;
-            switch(count)
-            {
-                case 0: icon = "Lava_Overlay"; break;
-                case 1: icon = "Azurite_Overlay"; break;
-                case 2: icon = "Crimsonite_Overlay"; break;
-                case 3: icon = "Titanium_Overlay"; break;
-                case 4: icon = "Lava_Glint"; break;
-                case 5: icon = "Ore_Glint"; break;
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void registerBlockIcons(IIconRegister iconRegister)
+	{
+		lavaGlint = iconRegister.registerIcon(ArmoryRef.RESOURCES_PREFIX + "lava_glint");
+		oreGlint = iconRegister.registerIcon(ArmoryRef.RESOURCES_PREFIX + "ore_glint");
+		
+		for (int count = 0; count < iconNames.length; count++)
+		{ overlays[count] = iconRegister.registerIcon(ArmoryRef.RESOURCES_PREFIX + iconNames[count]); }
+	}
 
-                default: icon = "Ore_Glint";
-            }
-            
-            blockIcons[count] = iconRegister.registerIcon(getUnwrappedUnlocalizedName(super.getUnlocalizedName()) + "_" + icon);
-        }
-    }
-    
+
     @Override
     @SideOnly(Side.CLIENT)
     public IIcon getIcon(int side, int meta)
     {	
-    	return blockIcons[meta];
+    	return overlays[meta];
     }
 
     @Override
@@ -111,7 +100,7 @@ public class ArmoryOre extends ArmoryBlocks
     @Override
     public boolean isOpaqueCube()
     {
-        return false;
+        return true;
     }
     
     

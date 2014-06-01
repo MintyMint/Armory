@@ -28,31 +28,31 @@ public class RenderOreBlock extends BlockRenderer implements ISimpleBlockRenderi
         	if (metadata == 0)
         	{
         		GL11.glColor3f(1f, 1f,1f);
-        		drawFaces(renderer, block, handlerBlock.blockIcons[4]);
+        		drawFaces(renderer, block, handlerBlock.lavaGlint);
         	}
         	
         	else if (metadata == 1)
         	{
         		GL11.glColor3f(0.070f, 0.203f, 0.337f);
-        		drawFaces(renderer, block, handlerBlock.blockIcons[5]);
+        		drawFaces(renderer, block, handlerBlock.oreGlint);
         	}
         	
         	else if (metadata == 2)
         	{
         		GL11.glColor3f(1f, 0f, 0f);
-        		drawFaces(renderer, block, handlerBlock.blockIcons[5]);
+        		drawFaces(renderer, block, handlerBlock.oreGlint);
         	}
         	
         	else if (metadata == 3)
         	{
         		GL11.glColor3f(1f, 1f,1f);
-        		drawFaces(renderer, block, handlerBlock.blockIcons[5]);
+        		drawFaces(renderer, block, handlerBlock.oreGlint);
         	}
         	
         	
         	GL11.glColor3f(1f, 1f,1f);
         	renderer.setRenderBounds(0, 0, 0, 1, 1, 1);
-        	drawFaces(renderer, block, handlerBlock.blockIcons[metadata]);
+        	drawFaces(renderer, block, handlerBlock.overlays[metadata]);
         }
 	}
 
@@ -73,27 +73,27 @@ public class RenderOreBlock extends BlockRenderer implements ISimpleBlockRenderi
 			{
 				tess.setBrightness(200);
 				tess.setColorOpaque_I(0xFFFFFF);
-				renderAllSides(world, x, y, z, handlerBlock, renderer, handlerBlock.blockIcons[4], true);
+				renderAllSides(world, x, y, z, handlerBlock, renderer, handlerBlock.lavaGlint, true);
 			}
 			
 			else if (metadata == 1)
 			{
 				tess.setBrightness(225);
 				tess.setColorOpaque_I(0x012345);
-				renderAllSides(world, x, y, z, handlerBlock, renderer, handlerBlock.blockIcons[5], true);
+				renderAllSides(world, x, y, z, handlerBlock, renderer, handlerBlock.oreGlint, true);
 			}
 	
 			else if (metadata == 2)
 			{
 				tess.setBrightness(150);
 				tess.setColorOpaque_I(0xFF0000);
-				renderAllSides(world, x, y, z, handlerBlock, renderer, handlerBlock.blockIcons[5], true);
+				renderAllSides(world, x, y, z, handlerBlock, renderer, handlerBlock.oreGlint, true);
 			}
 			
 			else if (metadata == 3)
 			{
 				tess.setColorOpaque_I(0xFFFFFF);
-				renderAllSides(world, x, y, z, handlerBlock, renderer, handlerBlock.blockIcons[5], true);
+				renderAllSides(world, x, y, z, handlerBlock, renderer, handlerBlock.oreGlint, true);
 			}
 			
 			renderer.renderStandardBlock(block, x, y, z);
