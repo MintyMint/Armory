@@ -1,7 +1,6 @@
 package armory.core.render;
 
 import net.minecraft.block.Block;
-import net.minecraft.client.renderer.EntityRenderer;
 import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.util.IIcon;
@@ -18,38 +17,37 @@ public class BlockRenderer
 
 	public static void drawFaces(RenderBlocks renderblocks, Block block, IIcon tTex, IIcon bTex, IIcon nTex, IIcon eTex, IIcon sTex, IIcon wTex)
 	{
-		Tessellator tessellator = Tessellator.instance;
 		GL11.glTranslatef(-0.5F, -0.5F, -0.5F);
 
-		tessellator.startDrawingQuads();
-		tessellator.setNormal(0.0F, 1.0F, 0.0F);
+		Tessellator.instance.startDrawingQuads();
+		Tessellator.instance.setNormal(0.0F, 1.0F, 0.0F);
 		renderblocks.renderFaceYPos(block, 0.0D, 0.0D, 0.0D, tTex);
-		tessellator.draw();
+		Tessellator.instance.draw();
 
-		tessellator.startDrawingQuads();
-		tessellator.setNormal(0.0F, -1.0F, 0.0F);
+		Tessellator.instance.startDrawingQuads();
+		Tessellator.instance.setNormal(0.0F, -1.0F, 0.0F);
 		renderblocks.renderFaceYNeg(block, 0.0D, 0.0D, 0.0D, bTex);
-		tessellator.draw();
+		Tessellator.instance.draw();
 
-		tessellator.startDrawingQuads();
-		tessellator.setNormal(0.0F, 0.0F, 1.0F);
+		Tessellator.instance.startDrawingQuads();
+		Tessellator.instance.setNormal(0.0F, 0.0F, 1.0F);
 		renderblocks.renderFaceZNeg(block, 0.0D, 0.0D, 0.0D, nTex);
-		tessellator.draw();
+		Tessellator.instance.draw();
 
-		tessellator.startDrawingQuads();
-		tessellator.setNormal(0.0F, 0.0F, -1.0F);
+		Tessellator.instance.startDrawingQuads();
+		Tessellator.instance.setNormal(0.0F, 0.0F, -1.0F);
 		renderblocks.renderFaceXPos(block, 0.0D, 0.0D, 0.0D, eTex);
-		tessellator.draw();
+		Tessellator.instance.draw();
 
-		tessellator.startDrawingQuads();
-		tessellator.setNormal(1.0F, 0.0F, 0.0F);
+		Tessellator.instance.startDrawingQuads();
+		Tessellator.instance.setNormal(1.0F, 0.0F, 0.0F);
 		renderblocks.renderFaceZPos(block, 0.0D, 0.0D, 0.0D, sTex);
-		tessellator.draw();
+		Tessellator.instance.draw();
 
-		tessellator.startDrawingQuads();
-		tessellator.setNormal(-1.0F, 0.0F, 0.0F);
+		Tessellator.instance.startDrawingQuads();
+		Tessellator.instance.setNormal(-1.0F, 0.0F, 0.0F);
 		renderblocks.renderFaceXNeg(block, 0.0D, 0.0D, 0.0D, wTex);
-		tessellator.draw();
+		Tessellator.instance.draw();
 
 		GL11.glTranslatef(0.5F, 0.5F, 0.5F);
 	}

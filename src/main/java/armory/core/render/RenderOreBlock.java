@@ -3,7 +3,6 @@ package armory.core.render;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 
 import org.lwjgl.opengl.GL11;
@@ -25,32 +24,16 @@ public class RenderOreBlock extends BlockRenderer implements ISimpleBlockRenderi
 
         	renderer.setRenderBounds(0.0001, 0.0001, 0.0001, 0.9999, 0.9999, 0.9999);
         	
+        	Tessellator tess = Tessellator.instance;
+        	
+        	tess.setColorOpaque_I(handlerBlock.colors[metadata]);
+        	
         	if (metadata == 0)
-        	{
-        		GL11.glColor3f(1f, 1f,1f);
-        		drawFaces(renderer, block, handlerBlock.lavaGlint);
-        	}
+        	{ drawFaces(renderer, block, handlerBlock.lavaGlint); }
         	
-        	else if (metadata == 1)
-        	{
-        		GL11.glColor3f(0.070f, 0.203f, 0.337f);
-        		drawFaces(renderer, block, handlerBlock.oreGlint);
-        	}
-        	
-        	else if (metadata == 2)
-        	{
-        		GL11.glColor3f(1f, 0f, 0f);
-        		drawFaces(renderer, block, handlerBlock.oreGlint);
-        	}
-        	
-        	else if (metadata == 3)
-        	{
-        		GL11.glColor3f(1f, 1f,1f);
-        		drawFaces(renderer, block, handlerBlock.oreGlint);
-        	}
-        	
-        	
-        	GL11.glColor3f(1f, 1f,1f);
+        	else
+        	{ drawFaces(renderer, block, handlerBlock.oreGlint); }
+
         	renderer.setRenderBounds(0, 0, 0, 1, 1, 1);
         	drawFaces(renderer, block, handlerBlock.overlays[metadata]);
         }
@@ -68,40 +51,21 @@ public class RenderOreBlock extends BlockRenderer implements ISimpleBlockRenderi
 		renderer.setRenderBounds(0.001, 0.001, 0.001, 0.999, 0.999, 0.999);
 		
 		if(modelID == ClientProxy.OreBlockRenderID)
-		{
+		{	
+			tess.setColorOpaque_I(handlerBlock.colors[metadata]);
+			tess.setBrightness(handlerBlock.brightness[metadata]);
+			
 			if (metadata == 0)
-			{
-				tess.setBrightness(200);
-				tess.setColorOpaque_I(0xFFFFFF);
-				renderAllSides(world, x, y, z, handlerBlock, renderer, handlerBlock.lavaGlint, true);
-			}
+			{ renderAllSides(world, x, y, z, handlerBlock, renderer, handlerBlock.lavaGlint, true); }
 			
-			else if (metadata == 1)
-			{
-				tess.setBrightness(225);
-				tess.setColorOpaque_I(0x012345);
-				renderAllSides(world, x, y, z, handlerBlock, renderer, handlerBlock.oreGlint, true);
-			}
-	
-			else if (metadata == 2)
-			{
-				tess.setBrightness(150);
-				tess.setColorOpaque_I(0xFF0000);
-				renderAllSides(world, x, y, z, handlerBlock, renderer, handlerBlock.oreGlint, true);
-			}
-			
-			else if (metadata == 3)
-			{
-				tess.setColorOpaque_I(0xFFFFFF);
-				renderAllSides(world, x, y, z, handlerBlock, renderer, handlerBlock.oreGlint, true);
-			}
-			
+			else
+			{ renderAllSides(world, x, y, z, handlerBlock, renderer, handlerBlock.oreGlint, true); }
+
+		
+			renderer.setRenderBounds(0, 0, 0, 1, 1, 1);
+			renderer.clearOverrideBlockTexture();
 			renderer.renderStandardBlock(block, x, y, z);
 		}
-		
-		renderer.setRenderBounds(0, 0, 0, 1, 1, 1);
-		renderer.clearOverrideBlockTexture();
-		renderer.renderStandardBlock(block, x, y, z);
 		
 		return true;
 	}
