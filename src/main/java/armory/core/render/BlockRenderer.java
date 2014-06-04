@@ -19,41 +19,28 @@ public class BlockRenderer
 	{
 		GL11.glTranslatef(-0.5F, -0.5F, -0.5F);
 
-		Tessellator.instance.startDrawingQuads();
 		Tessellator.instance.setNormal(0.0F, 1.0F, 0.0F);
 		renderblocks.renderFaceYPos(block, 0.0D, 0.0D, 0.0D, tTex);
-		Tessellator.instance.draw();
 
-		Tessellator.instance.startDrawingQuads();
 		Tessellator.instance.setNormal(0.0F, -1.0F, 0.0F);
 		renderblocks.renderFaceYNeg(block, 0.0D, 0.0D, 0.0D, bTex);
-		Tessellator.instance.draw();
 
-		Tessellator.instance.startDrawingQuads();
 		Tessellator.instance.setNormal(0.0F, 0.0F, 1.0F);
 		renderblocks.renderFaceZNeg(block, 0.0D, 0.0D, 0.0D, nTex);
-		Tessellator.instance.draw();
 
-		Tessellator.instance.startDrawingQuads();
 		Tessellator.instance.setNormal(0.0F, 0.0F, -1.0F);
 		renderblocks.renderFaceXPos(block, 0.0D, 0.0D, 0.0D, eTex);
-		Tessellator.instance.draw();
 
-		Tessellator.instance.startDrawingQuads();
 		Tessellator.instance.setNormal(1.0F, 0.0F, 0.0F);
 		renderblocks.renderFaceZPos(block, 0.0D, 0.0D, 0.0D, sTex);
-		Tessellator.instance.draw();
 
-		Tessellator.instance.startDrawingQuads();
 		Tessellator.instance.setNormal(-1.0F, 0.0F, 0.0F);
 		renderblocks.renderFaceXNeg(block, 0.0D, 0.0D, 0.0D, wTex);
-		Tessellator.instance.draw();
 
 		GL11.glTranslatef(0.5F, 0.5F, 0.5F);
 	}
 
-	protected static void renderAllSides(IBlockAccess world, int x, int y,
-			int z, Block block, RenderBlocks renderer, IIcon texture)
+	protected static void renderAllSides(IBlockAccess world, int x, int y, int z, Block block, RenderBlocks renderer, IIcon texture)
 	{
 		renderAllSides(world, x, y, z, block, renderer, texture, true);
 	}
@@ -61,10 +48,15 @@ public class BlockRenderer
 	protected static void renderAllSides(IBlockAccess world, int x, int y, int z, Block block, RenderBlocks renderer, IIcon texture, boolean allsides)
 	{
 		if ((allsides) || (block.shouldSideBeRendered(world, x, y + 1, z, 6))) renderer.renderFaceYPos(block, x, y, z, texture);
+		
 		if ((allsides) || (block.shouldSideBeRendered(world, x, y - 1, z, 6))) renderer.renderFaceYNeg(block, x, y, z, texture);
+		
 		if ((allsides) || (block.shouldSideBeRendered(world, x - 1, y, z, 6))) renderer.renderFaceZNeg(block, x, y, z, texture);
+		
 		if ((allsides) || (block.shouldSideBeRendered(world, x, y, z - 1, 6))) renderer.renderFaceXPos(block, x, y, z, texture);
+		
 		if ((allsides) || (block.shouldSideBeRendered(world, x + 1, y, z, 6))) renderer.renderFaceZPos(block, x, y, z, texture);
+		
 		if ((allsides) || (block.shouldSideBeRendered(world, x, y, z + 1, 6))) renderer.renderFaceXNeg(block, x, y, z, texture);
 	}
 }

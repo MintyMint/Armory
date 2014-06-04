@@ -42,7 +42,6 @@ public class Armory
 	public static void preInit(FMLPreInitializationEvent event)
 	{
 		armoryLogger = Logger.getLogger(ArmoryRef.MOD_ID);
-		//armoryLogger.setParent((Logger) FMLLog.getLogger());
 		
 		ConfigHelper.init(event.getSuggestedConfigurationFile());
 		
