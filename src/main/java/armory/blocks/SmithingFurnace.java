@@ -12,6 +12,8 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 import armory.Armory;
+import armory.core.BlockHelper;
+import armory.core.proxy.ClientProxy;
 import armory.lib.ArmoryNames;
 import armory.lib.ArmoryRef;
 import armory.tile_entity.ArmoryTE;
@@ -27,10 +29,9 @@ public class SmithingFurnace extends ArmoryBlocks implements ITileEntityProvider
 		super(Material.iron);
 		this.setBlockName(ArmoryNames.Blocks.SMITHING_FURNACE_NAME);
         this.setCreativeTab(Armory.getCreativeTab());
-        GameRegistry.registerBlock(this, this.getUnlocalizedName());
+        BlockHelper.registerBlocks(this);
         setBlockBounds(0f, 0f, 0f, 1f, 1f, 1f);
 	}
-
 	
     @Override
     public boolean isOpaqueCube()
@@ -41,7 +42,7 @@ public class SmithingFurnace extends ArmoryBlocks implements ITileEntityProvider
     @Override
     public int getRenderType()
     {
-        return -1;
+        return ClientProxy.smithingFurnaceRenderID;
     }
 
     @Override
@@ -67,12 +68,4 @@ public class SmithingFurnace extends ArmoryBlocks implements ITileEntityProvider
 	{
 		player.openGui(Armory.instance, 1, world, x ,y, z); return true;
 	}
-	
-	@Override
-	@SideOnly(Side.CLIENT)
-	public void registerBlockIcons(IIconRegister iconRegister)
-	{
-		this.blockIcon = iconRegister.registerIcon(getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
-	}
-	
 }

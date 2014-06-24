@@ -45,7 +45,7 @@ public class ArmoryOre extends ArmoryBlocks
 	@Override
 	public float getBlockHardness(World world, int x, int y, int z)
 	{
-		if (world.getBlockMetadata(x, y, z) <= this.hardnesses.length)
+		if (world.getBlockMetadata(x, y, z) < this.hardnesses.length)
 		{
 			return this.hardnesses[world.getBlockMetadata(x, y, z)];
 		}
@@ -56,7 +56,7 @@ public class ArmoryOre extends ArmoryBlocks
 	@Override
 	public float getExplosionResistance(Entity par1Entity, World world, int x, int y, int z, double explosionX, double explosionY, double explosionZ)
 	{
-		if (world.getBlockMetadata(x, y, z) <= this.resistances.length)
+		if (world.getBlockMetadata(x, y, z) < this.resistances.length)
 		{
 			return this.resistances[world.getBlockMetadata(x, y, z)];
 		}
@@ -112,7 +112,7 @@ public class ArmoryOre extends ArmoryBlocks
 
 	public int getRenderType()
 	{
-		return ClientProxy.OreBlockRenderID;
+		return ClientProxy.oreBlockRenderID;
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })

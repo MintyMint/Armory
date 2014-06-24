@@ -23,7 +23,7 @@ public class RenderOreBlock extends BlockRenderer implements ISimpleBlockRenderi
 
 		Tessellator tess = Tessellator.instance;
 
-		if (modelID == ClientProxy.OreBlockRenderID)
+		if (modelID == ClientProxy.oreBlockRenderID)
 		{
 			tess.startDrawingQuads();
 
@@ -54,7 +54,7 @@ public class RenderOreBlock extends BlockRenderer implements ISimpleBlockRenderi
 
 		ArmoryOre handlerBlock = (ArmoryOre) block;
 
-		if (modelID == ClientProxy.OreBlockRenderID)
+		if (modelID == ClientProxy.oreBlockRenderID)
 		{
 			renderer.setRenderBounds(0.001, 0.001, 0.001, 0.999, 0.999, 0.999);
 
@@ -83,7 +83,7 @@ public class RenderOreBlock extends BlockRenderer implements ISimpleBlockRenderi
 	@Override
 	public int getRenderId()
 	{
-		return ClientProxy.OreBlockRenderID;
+		return ClientProxy.oreBlockRenderID;
 	}
 
 	@Override

@@ -35,7 +35,7 @@ public class BlockHelper
 	
 	public static void registerBlocks(ArmoryBlocks block)
 	{
-		GameRegistry.registerBlock(block, block.getUnwrappedUnlocalizedName(block.getUnlocalizedName()));
+		GameRegistry.registerBlock(block, block.getUnlocalizedName());
 	}
 	
 	public static void registerBlocksWithMetadata(ArmoryBlocks block, Class<? extends ItemBlock> itemBlockClass, String name)

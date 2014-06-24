@@ -4,8 +4,8 @@ item.armory:crimsonite_chunk.name=Chunks of Crimsonite
 item.armory:titanium_chunk.name=Chunks of Titanium
 item.armory:smithing_hammer.name=Smithing Hammer
 item.armory:smithing_hammer_broken.name=Broken Smithing Hammer
-armory:smithing_anvil.name=Smithing Anvil
-armory:smithing_furnace.name=Smithing Furnace
+tile.armory:smithing_anvil.name=Smithing Anvil
+tile.armory:smithing_furnace.name=Smithing Furnace
 
 
 

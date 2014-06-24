@@ -14,10 +14,12 @@ public class ArmoryRef
 	public static final String RESOURCES_PREFIX = MOD_ID.toLowerCase() + ":";
 	
 	public static final String MODELS_LOCATION = "models/";
+	public static final String BLOCK_TEXTURE_LOCATION = "textures/blocks/";
+	public static final String ITEM_TEXTURE_LOCATION = "textures/items/";
 	
 	//models//
 	public static final ResourceLocation SMITHING_FURNACE_MODEL = getResourceLocation(MOD_ID, MODELS_LOCATION + "smithing_furnace.obj");
-	public static final ResourceLocation SMITHING_FURNACE_TEXTURE = getResourceLocation(MOD_ID, MODELS_LOCATION + "smithing_furnace.png");
+	public static final ResourceLocation SMITHING_FURNACE_TEXTURE = getResourceLocation(MOD_ID, BLOCK_TEXTURE_LOCATION + "smithing_furnace.png");
 		
 	//GUIs//
 	public static final ResourceLocation SMITHING_ANVIL_GUI = getResourceLocation(MOD_ID, "textures/gui/smithing_anvil_gui.png");
