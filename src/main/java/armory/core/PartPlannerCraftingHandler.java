@@ -50,7 +50,7 @@ public class PartPlannerCraftingHandler
     {
     	this.recipes = new ArrayList();
     	
-    	this.addRecipe(new ItemStack(ItemHelper.smithingHammer, 1), new Object[] {" iii ", " iii ", "  s  ", "  s  ", "  s  ", "i", Items.iron_ingot, "s", Items.stick});
+    	this.addRecipe(new ItemStack(ItemHelper.smithingHammer, 1), new Object[] {"s", "s", "i", "s", "s", "i", Items.iron_ingot, "s", Items.stick});
     	
         Collections.sort(this.recipes, new PartPlannerRecipeSorter(this));
     }
@@ -87,7 +87,7 @@ public class PartPlannerCraftingHandler
 
         HashMap hashmap;
 
-        for (hashmap = new HashMap(); i < par2ArrayOfObj.length; i += 3)
+        for (hashmap = new HashMap(); i < par2ArrayOfObj.length; i += 2)
         {
             Character character = (Character)par2ArrayOfObj[i];
             ItemStack itemstack1 = null;
