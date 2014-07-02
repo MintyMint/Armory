@@ -29,7 +29,7 @@ public class ArmoryOre extends ArmoryBlocks
 	public IIcon[] overlays = new IIcon[4];
 	public String[] iconNames = { "obsidium_overlay", "azurite_overlay", "crimsonite_overlay", "titanium_overlay" };
 	public int[] colors = { 0xFFFFFF, 0x123456, 0xFF0000, 0xFFFFFF };
-	public int[] brightness = { 200, 225, 150, 0 };
+	public int[] brightness = { 225, 70, 35, 0 };
 
 	public float[] hardnesses = { 30f, 4f, 4f, 4.2f };
 	public float[] resistances = { 1750f, 5.5f, 5.5f, 6f };

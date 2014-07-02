@@ -45,8 +45,6 @@ public class Armory
 		
 		ConfigHelper.init(event.getSuggestedConfigurationFile());
 		
-		proxy.registerRendering();
-		
 		BlockHelper.init();
 		
 		ItemHelper.init();
@@ -65,13 +63,14 @@ public class Armory
 	@Mod.EventHandler
 	public static void init(FMLInitializationEvent event)
 	{
-		//Register our GUI Handler.
+		proxy.registerRendering();
+		
 		NetworkRegistry.INSTANCE.registerGuiHandler(instance, new ArmoryGuiHandler());
 	}
 	
 	@Mod.EventHandler
 	public static void postInit(FMLPostInitializationEvent event)
 	{
-
+		
 	}
 }

@@ -38,48 +38,43 @@ public class ItemSmithingFurnaceRenderer implements IItemRenderer
         {
             case ENTITY:
             {
-            	renderSmithingFurnace(0.5F, 0.5F, 0.5F);
-                break;
+            	renderSmithingFurnace(-0.5F, 0.0F, -0.5F);
+                return;
             }
             
             case EQUIPPED:
             {
-            	renderSmithingFurnace(1.0F, 1.0F, 1.0F);
-                break;
+            	renderSmithingFurnace(0.0F, 0.0F, 0.0F);
+                return;
             }
             
             case EQUIPPED_FIRST_PERSON:
             {
-            	renderSmithingFurnace(1.0F, 1.0F, 1.0F);
-                break;
+            	renderSmithingFurnace(0.0F, 0.0F, 0.0F);
+                return;
             }
             
             case INVENTORY:
             {
-            	renderSmithingFurnace(0.0F, 0.075F, 0.0F);
-                break;
+            	renderSmithingFurnace(-0.5F, -0.5F, -0.5F);
+                return;
             }
             
-            default: break;
+            default:{ }
         }	
 	}
 	
     private void renderSmithingFurnace(float x, float y, float z)
     {
         GL11.glPushMatrix();
-        GL11.glDisable(GL11.GL_LIGHTING);
 
-        // Scale, Translate, Rotate
         GL11.glScalef(1F, 1F, 1F);
         GL11.glTranslatef(x, y, z);
 
-        // Bind texture
         FMLClientHandler.instance().getClient().renderEngine.bindTexture(ArmoryRef.SMITHING_FURNACE_TEXTURE);
 
-        // Render
         furnaceModel.renderAll();
 
-        GL11.glEnable(GL11.GL_LIGHTING);
         GL11.glPopMatrix();
     }
 }

@@ -60,11 +60,7 @@ public class RenderOreBlock extends BlockRenderer implements ISimpleBlockRenderi
 
 			tess.setColorOpaque_I(handlerBlock.colors[metadata]);
 
-			if (metadata == 3)
-			{ tess.setBrightness(block.getMixedBrightnessForBlock(world, x, y, z)); }
-
-			else
-			{ tess.setBrightness(handlerBlock.brightness[metadata]); }
+			tess.setBrightness(block.getMixedBrightnessForBlock(world, x, y, z) + handlerBlock.brightness[metadata]);
 
 			if (metadata == 0)
 			{ renderAllSides(world, x, y, z, handlerBlock, renderer, handlerBlock.lavaGlint, true); }

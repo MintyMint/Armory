@@ -44,7 +44,11 @@ public class SmithingAnvil extends ArmoryBlocks implements ITileEntityProvider
 	{
 		TileEntity attachedTE = world.getTileEntity(x, y, z);
 
-		if (player.isSneaking() == true){ player.openGui(Armory.instance, 0, world, x ,y, z); return true;}
+		if (player.isSneaking() == true)
+		{
+			player.openGui(Armory.instance, ArmoryRef.SMITHING_FURNACE_GUI_ID, world, x ,y, z);
+			return true;
+		}
 
 		if (player.getHeldItem() != null && player.getHeldItem().getItem() == ItemHelper.smithingHammer)
 		{
@@ -60,12 +64,4 @@ public class SmithingAnvil extends ArmoryBlocks implements ITileEntityProvider
 
 		return false;
 	}
-	
-	@Override
-	@SideOnly(Side.CLIENT)
-	public void registerBlockIcons(IIconRegister iconRegister)
-	{
-		this.blockIcon = iconRegister.registerIcon(getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
-	}
-	
 }
