@@ -1,10 +1,12 @@
-package armory.tile_entity.part_planner;
+package armory.part_planner;
 
 import org.lwjgl.opengl.GL11;
 
+import armory.blocks.PartPlanner;
 import armory.lib.ArmoryRef;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.util.ResourceLocation;
@@ -33,6 +35,18 @@ public class GuiPartPlanner extends GuiContainer
 		this.fontRendererObj.drawString(StatCollector.translateToLocal("Part Planner"), 105, 7, 0x000000);
 		
 		this.fontRendererObj.drawString(StatCollector.translateToLocal("Inventory"), 8, 98, 0x000000);
+		
+		drawArrow();
+	}
+	
+	protected void drawArrow()
+	{
+		GL11.glColor4f(1F, 1F, 1F, 1F);
+		Minecraft.getMinecraft().getTextureManager().bindTexture(TextureMap.locationBlocksTexture);
+		if (this.inventorySlots.getSlot(0).getHasStack() == true)
+		{
+			this.drawTexturedModelRectFromIcon(101, 34, PartPlanner.validRecipe, 32, 32);
+		}
 	}
 
 	@Override

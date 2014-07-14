@@ -16,12 +16,6 @@ public class ArmoryItems extends Item
     }
  
     @Override
-    public String getUnlocalizedName()
-    {
-        return String.format("item.%s%s",ArmoryRef.RESOURCES_PREFIX, getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
-    }
- 
-    @Override
     public String getUnlocalizedName(ItemStack itemStack)
     {
         return String.format("item.%s%s", ArmoryRef.RESOURCES_PREFIX, getUnwrappedUnlocalizedName(super.getUnlocalizedName()));

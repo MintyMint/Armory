@@ -1,4 +1,4 @@
-package armory.tile_entity.part_planner;
+package armory.part_planner;
 
 import armory.core.BlockHelper;
 import armory.core.PartPlannerCraftingHandler;
@@ -91,7 +91,7 @@ public class ContainerPartPlanner extends Container
 
         if (!this.worldObject.isRemote)
         {
-            for (int i = 0; i < 9; ++i)
+            for (int i = 0; i < 25; ++i)
             {
                 ItemStack itemstack = this.craftMatrix.getStackInSlotOnClosing(i);
 

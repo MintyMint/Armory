@@ -1,8 +1,8 @@
 package armory.gui;
 
 import armory.lib.ArmoryRef;
-import armory.tile_entity.part_planner.ContainerPartPlanner;
-import armory.tile_entity.part_planner.GuiPartPlanner;
+import armory.part_planner.ContainerPartPlanner;
+import armory.part_planner.GuiPartPlanner;
 import armory.tile_entity.smithing_anvil.ContainerSmithingAnvil;
 import armory.tile_entity.smithing_anvil.GuiSmithingAnvil;
 import armory.tile_entity.smithing_anvil.TileSmithingAnvil;

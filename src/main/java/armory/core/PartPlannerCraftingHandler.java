@@ -50,7 +50,7 @@ public class PartPlannerCraftingHandler
     {
     	this.recipes = new ArrayList();
     	
-    	this.addRecipe(new ItemStack(ItemHelper.smithingHammer, 1), new Object[] {"s", "s", "i", "s", "s", "i", Items.iron_ingot, "s", Items.stick});
+    	this.addRecipe(new ItemStack(ItemHelper.smithingHammer, 1), new Object[] {" iii ", " iii ", "  s  ", "  s  ", "  s  ", 'i', Items.iron_ingot, 's', Items.stick});
     	
         Collections.sort(this.recipes, new PartPlannerRecipeSorter(this));
     }

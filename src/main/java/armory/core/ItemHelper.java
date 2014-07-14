@@ -4,8 +4,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import armory.items.ArmoryItems;
-import armory.items.ArmoryOreChunks;
-import armory.items.ArmoryOreIngots;
+import armory.items.OreChunks;
+import armory.items.OreIngots;
 import armory.items.CrudeWeaponParts;
 import armory.items.HeatedWeaponParts;
 import armory.items.SmithingHammer;
@@ -26,8 +26,8 @@ public class ItemHelper
 	
 	public static void init()
 	{
-		oreChunks = new ArmoryOreChunks();
-		oreIngots = new ArmoryOreIngots();
+		oreChunks = new OreChunks();
+		oreIngots = new OreIngots();
 		
 		crudeWeaponParts = new CrudeWeaponParts();
 		heatedWeaponParts = new HeatedWeaponParts();

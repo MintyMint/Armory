@@ -14,12 +14,12 @@ import armory.lib.ArmoryRef;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ArmoryOreIngots extends ArmoryItems
+public class OreIngots extends ArmoryItems
 {
     @SideOnly(Side.CLIENT)
     public IIcon[] chunkIcons;
 	
-	public ArmoryOreIngots()
+	public OreIngots()
     {
     	this.setUnlocalizedName(ArmoryNames.Items.ORE_INGOTS_NAME);
     	setHasSubtypes(true);
@@ -27,7 +27,7 @@ public class ArmoryOreIngots extends ArmoryItems
     	setMaxDamage(0);
         setCreativeTab(Armory.getCreativeTab());
         ItemHelper.registerItems(this);
-        chunkIcons = new IIcon[4];
+        chunkIcons = new IIcon[ArmoryNames.Items.ORE_TYPES.length];
     }
     
 	@SideOnly(Side.CLIENT)
@@ -57,7 +57,7 @@ public class ArmoryOreIngots extends ArmoryItems
 
                 default: icon = "base";
             }
-            chunkIcons[count] = iconRegister.registerIcon(getUnwrappedUnlocalizedName(super.getUnlocalizedName()) + "_" + icon);
+            chunkIcons[count] = iconRegister.registerIcon(ArmoryRef.RESOURCES_PREFIX + getUnwrappedUnlocalizedName(super.getUnlocalizedName()) + "_" + icon);
         }
     }
     
