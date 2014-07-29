@@ -3,6 +3,7 @@ package armory.core.proxy;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.MinecraftForgeClient;
 import armory.core.BlockHelper;
+import armory.core.render.ItemPartPlannerRenderer;
 import armory.core.render.ItemSmithingFurnaceRenderer;
 import armory.core.render.RenderOreBlock;
 import armory.core.render.RenderPartPlanner;
@@ -31,5 +32,6 @@ public class ClientProxy extends CommonProxy
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(BlockHelper.smithingFurnace), new ItemSmithingFurnaceRenderer());
 		
 		ClientRegistry.bindTileEntitySpecialRenderer(PartPlannerDummyTE.class, new RenderPartPlanner());
+		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(BlockHelper.partPlanner), new ItemPartPlannerRenderer());
     }
 }

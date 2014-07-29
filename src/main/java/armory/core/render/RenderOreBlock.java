@@ -32,10 +32,10 @@ public class RenderOreBlock extends BlockRenderer implements ISimpleBlockRenderi
 			tess.setColorOpaque_I(handlerBlock.colors[metadata]);
 
 			if (metadata == 0)
-			{ drawFaces(renderer, block, handlerBlock.lavaGlint); }
+				drawFaces(renderer, block, handlerBlock.lavaGlint);
 
 			else
-			{ drawFaces(renderer, block, handlerBlock.oreGlint); }
+				drawFaces(renderer, block, handlerBlock.oreGlint);
 
 			tess.setColorOpaque_I(0xFFFFFF);
 			renderer.setRenderBounds(0, 0, 0, 1, 1, 1);
@@ -63,10 +63,10 @@ public class RenderOreBlock extends BlockRenderer implements ISimpleBlockRenderi
 			tess.setBrightness(block.getMixedBrightnessForBlock(world, x, y, z) + handlerBlock.brightness[metadata]);
 
 			if (metadata == 0)
-			{ renderAllSides(world, x, y, z, handlerBlock, renderer, handlerBlock.lavaGlint, true); }
+				renderAllSides(world, x, y, z, handlerBlock, renderer, handlerBlock.lavaGlint, true);
 
 			else
-			{ renderAllSides(world, x, y, z, handlerBlock, renderer, handlerBlock.oreGlint, true); }
+				renderAllSides(world, x, y, z, handlerBlock, renderer, handlerBlock.oreGlint, true);
 
 			renderer.setRenderBounds(0, 0, 0, 1, 1, 1);
 			renderer.clearOverrideBlockTexture();

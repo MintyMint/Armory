@@ -16,8 +16,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class OreIngots extends ArmoryItems
 {
-    @SideOnly(Side.CLIENT)
-    public IIcon[] chunkIcons;
+    public IIcon[] ingotIcons;
 	
 	public OreIngots()
     {
@@ -27,7 +26,7 @@ public class OreIngots extends ArmoryItems
     	setMaxDamage(0);
         setCreativeTab(Armory.getCreativeTab());
         ItemHelper.registerItems(this);
-        chunkIcons = new IIcon[ArmoryNames.Items.ORE_TYPES.length];
+        ingotIcons = new IIcon[ArmoryNames.Items.ORE_TYPES.length];
     }
     
 	@SideOnly(Side.CLIENT)
@@ -48,7 +47,7 @@ public class OreIngots extends ArmoryItems
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister iconRegister)
     {
-        for(int count = 0; count < chunkIcons.length; count++)
+        for(int count = 0; count < ingotIcons.length; count++)
         {
             String icon;
             switch(count)
@@ -57,7 +56,8 @@ public class OreIngots extends ArmoryItems
 
                 default: icon = "base";
             }
-            chunkIcons[count] = iconRegister.registerIcon(ArmoryRef.RESOURCES_PREFIX + getUnwrappedUnlocalizedName(super.getUnlocalizedName()) + "_" + icon);
+            
+            ingotIcons[count] = iconRegister.registerIcon(ArmoryRef.RESOURCES_PREFIX + getUnwrappedUnlocalizedName(super.getUnlocalizedName()) + "_" + icon);
         }
     }
     
@@ -65,7 +65,7 @@ public class OreIngots extends ArmoryItems
     @SideOnly(Side.CLIENT)
     public IIcon getIconFromDamage(int meta)
     {
-    	return chunkIcons[meta];
+    	return ingotIcons[meta];
     }
 
     @SuppressWarnings({"rawtypes", "unchecked"})

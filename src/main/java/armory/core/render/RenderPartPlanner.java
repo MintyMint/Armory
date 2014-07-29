@@ -21,7 +21,9 @@ import cpw.mods.fml.client.FMLClientHandler;
 
 public class RenderPartPlanner extends TileEntitySpecialRenderer
 {
-	public static final ResourceLocation plannerTexture = ArmoryRef.PART_PLANNER_TEXTURE;
+	public static final ResourceLocation PART_PLANNER_MODEL = new ResourceLocation(ArmoryRef.MOD_ID, ArmoryRef.MODELS_LOCATION + "part_planner.obj");
+	public static final ResourceLocation PART_PLANNER_TEXTURE = new ResourceLocation(ArmoryRef.MOD_ID, ArmoryRef.BLOCK_TEXTURE_LOCATION + "part_planner.png");
+	
 	private IModelCustom plannerModel;
 	
 	public RenderPartPlanner()
@@ -36,7 +38,7 @@ public class RenderPartPlanner extends TileEntitySpecialRenderer
 		
         GL11.glPushMatrix();
   
-            FMLClientHandler.instance().getClient().getTextureManager().bindTexture(plannerTexture);
+            FMLClientHandler.instance().getClient().getTextureManager().bindTexture(PART_PLANNER_TEXTURE);
 
             renderByOrientation(x, y, z, dummyTE.getOrientation());
             

@@ -23,11 +23,12 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class ArmoryOre extends ArmoryBlocks
 {
-	@SideOnly(Side.CLIENT)
 	public IIcon lavaGlint;
 	public IIcon oreGlint;
 	public IIcon[] overlays = new IIcon[4];
+	
 	public String[] iconNames = { "obsidium_overlay", "azurite_overlay", "crimsonite_overlay", "titanium_overlay" };
+	
 	public int[] colors = { 0xFFFFFF, 0x123456, 0xFF0000, 0xFFFFFF };
 	public int[] brightness = { 225, 70, 35, 0 };
 

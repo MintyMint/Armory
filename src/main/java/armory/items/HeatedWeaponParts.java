@@ -16,7 +16,6 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class HeatedWeaponParts extends ArmoryItems
 {
-    @SideOnly(Side.CLIENT)
     public IIcon[] chunkIcons;
 	
 	public HeatedWeaponParts()

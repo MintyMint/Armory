@@ -15,7 +15,9 @@ import cpw.mods.fml.client.FMLClientHandler;
 
 public class RenderSmithingFurnace extends TileEntitySpecialRenderer
 {
-	public static final ResourceLocation furanceTexture = ArmoryRef.SMITHING_FURNACE_TEXTURE;
+	public static final ResourceLocation SMITHING_FURNACE_MODEL = new ResourceLocation(ArmoryRef.MOD_ID, ArmoryRef.MODELS_LOCATION + "smithing_furnace.obj");
+	public static final ResourceLocation SMITHING_FURNACE_TEXTURE = new ResourceLocation(ArmoryRef.MOD_ID, ArmoryRef.BLOCK_TEXTURE_LOCATION + "smithing_furnace.png");
+	
 	private IModelCustom furnaceModel;
 	
 	public RenderSmithingFurnace()
@@ -30,7 +32,7 @@ public class RenderSmithingFurnace extends TileEntitySpecialRenderer
 		
         GL11.glPushMatrix();
   
-            FMLClientHandler.instance().getClient().getTextureManager().bindTexture(furanceTexture);
+            FMLClientHandler.instance().getClient().getTextureManager().bindTexture(SMITHING_FURNACE_TEXTURE);
 
             renderByOrientation(x, y, z, tileSmithingFurnace.getOrientation());
             

@@ -44,13 +44,14 @@ public class ItemSmithingFurnaceRenderer implements IItemRenderer
             
             case EQUIPPED:
             {
-            	renderSmithingFurnace(0.0F, 0.0F, 0.0F);
+            	renderSmithingFurnace(0F, 0f, 0F);
                 return;
             }
             
             case EQUIPPED_FIRST_PERSON:
             {
-            	renderSmithingFurnace(0.0F, 0.0F, 0.0F);
+            	GL11.glRotatef(-90, 0F, 1F, 0F);
+            	renderSmithingFurnace(0F, 0.2F, -0.5F);
                 return;
             }
             

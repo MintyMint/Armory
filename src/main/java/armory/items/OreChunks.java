@@ -16,7 +16,6 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class OreChunks extends ArmoryItems
 {
-    @SideOnly(Side.CLIENT)
     public IIcon[] chunkIcons;
 	
 	public OreChunks()
@@ -57,6 +56,7 @@ public class OreChunks extends ArmoryItems
 
                 default: icon = "base";
             }
+            
             chunkIcons[count] = iconRegister.registerIcon(ArmoryRef.RESOURCES_PREFIX + getUnwrappedUnlocalizedName(super.getUnlocalizedName()) + "_" + icon);
         }
     }

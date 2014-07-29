@@ -20,7 +20,6 @@ import net.minecraft.world.World;
 
 public class PartPlanner extends ArmoryBlocks implements ITileEntityProvider
 {
-	@SideOnly(Side.CLIENT)
     public static IIcon validRecipe;
 	
 	public PartPlanner()
