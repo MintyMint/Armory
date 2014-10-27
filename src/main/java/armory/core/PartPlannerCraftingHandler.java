@@ -35,7 +35,7 @@ public class PartPlannerCraftingHandler
     private static final PartPlannerCraftingHandler instance = new PartPlannerCraftingHandler();
     
     //A list of all the recipes added
-    private List recipes = new ArrayList();
+    private static List recipes = new ArrayList();
     
     private static final String __OBFID = "CL_00000090";
 
@@ -50,12 +50,10 @@ public class PartPlannerCraftingHandler
     {
     	this.recipes = new ArrayList();
     	
-    	this.addRecipe(new ItemStack(ItemHelper.smithingHammer, 1), new Object[] {" iii ", " iii ", "  s  ", "  s  ", "  s  ", 'i', Items.iron_ingot, 's', Items.stick});
-    	
         Collections.sort(this.recipes, new PartPlannerRecipeSorter(this));
     }
 
-    public PartPlannerShapedRecipes addRecipe(ItemStack par1ItemStack, Object ... par2ArrayOfObj)
+    public static PartPlannerShapedRecipes addRecipe(ItemStack par1ItemStack, Object ... par2ArrayOfObj)
     {
         String s = "";
         int i = 0;
@@ -125,7 +123,7 @@ public class PartPlannerCraftingHandler
         }
 
         PartPlannerShapedRecipes shapedrecipes = new PartPlannerShapedRecipes(j, k, aitemstack, par1ItemStack);
-        this.recipes.add(shapedrecipes);
+        recipes.add(shapedrecipes);
         return shapedrecipes;
     }
 

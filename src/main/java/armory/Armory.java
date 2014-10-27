@@ -9,6 +9,7 @@ import armory.core.ConfigHelper;
 import armory.core.CraftingHelper;
 import armory.core.ItemHelper;
 import armory.core.proxy.CommonProxy;
+import armory.core.proxy.IProxy;
 import armory.gui.ArmoryGuiHandler;
 import armory.lib.ArmoryRef;
 import cpw.mods.fml.common.FMLLog;
@@ -23,11 +24,11 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 
 public class Armory
 {
-	@Mod.Instance
+	@Mod.Instance(ArmoryRef.MOD_ID)
 	public static Armory instance;
 
-	@SidedProxy(clientSide = ArmoryRef.CLIENT_PROXY, serverSide = ArmoryRef.COMMON_PROXY)
-	public static CommonProxy proxy;
+	@SidedProxy(clientSide = ArmoryRef.CLIENT_PROXY, serverSide = ArmoryRef.SERVER_PROXY)
+	public static IProxy proxy;
 	
 	public static Logger armoryLogger;
 
@@ -71,6 +72,6 @@ public class Armory
 	@Mod.EventHandler
 	public static void postInit(FMLPostInitializationEvent event)
 	{
-		
+		FMLLog.info("Armory: Looks like everything ran correctly!");
 	}
 }

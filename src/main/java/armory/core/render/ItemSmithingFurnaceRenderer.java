@@ -1,6 +1,7 @@
 package armory.core.render;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.IItemRenderer;
 import net.minecraftforge.client.model.AdvancedModelLoader;
 import net.minecraftforge.client.model.IModelCustom;
@@ -12,11 +13,14 @@ import cpw.mods.fml.client.FMLClientHandler;
 
 public class ItemSmithingFurnaceRenderer implements IItemRenderer
 {
+	public static final ResourceLocation SMITHING_FURNACE_MODEL = new ResourceLocation(ArmoryRef.MOD_ID, ArmoryRef.MODELS_LOCATION + "smithing_furnace.obj");
+	public static final ResourceLocation SMITHING_FURNACE_TEXTURE = new ResourceLocation(ArmoryRef.MOD_ID, ArmoryRef.BLOCK_TEXTURE_LOCATION + "smithing_furnace.png");
+	
 	private final IModelCustom furnaceModel;
 	
     public ItemSmithingFurnaceRenderer()
     {
-        furnaceModel = AdvancedModelLoader.loadModel(ArmoryRef.SMITHING_FURNACE_MODEL);
+        furnaceModel = AdvancedModelLoader.loadModel(SMITHING_FURNACE_MODEL);
     }
 
 	@Override
@@ -72,7 +76,7 @@ public class ItemSmithingFurnaceRenderer implements IItemRenderer
         GL11.glScalef(1F, 1F, 1F);
         GL11.glTranslatef(x, y, z);
 
-        FMLClientHandler.instance().getClient().renderEngine.bindTexture(ArmoryRef.SMITHING_FURNACE_TEXTURE);
+        FMLClientHandler.instance().getClient().renderEngine.bindTexture(SMITHING_FURNACE_TEXTURE);
 
         furnaceModel.renderAll();
 

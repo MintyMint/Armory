@@ -14,7 +14,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ItemHelper
 {
-	private static final Item HeatedWeaponParts = null;
+	public static Item HeatedWeaponParts;
 	public static Item oreChunks;	
 	public static Item oreIngots;
 	
@@ -55,6 +55,5 @@ public class ItemHelper
 	public static void registerItems(ArmoryItems item)
 	{
 		GameRegistry.registerItem(item, item.getUnwrappedUnlocalizedName(item.getUnlocalizedName()));
-	}
-	
+	}	
 }

@@ -28,7 +28,7 @@ public class RenderPartPlanner extends TileEntitySpecialRenderer
 	
 	public RenderPartPlanner()
 	{
-		plannerModel = AdvancedModelLoader.loadModel(ArmoryRef.PART_PLANNER_MODEL);
+		plannerModel = AdvancedModelLoader.loadModel(PART_PLANNER_MODEL);
 	}
 	
 	@Override

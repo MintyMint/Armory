@@ -1,26 +1,15 @@
 package armory.blocks;
 
-import net.minecraft.block.BlockContainer;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import net.minecraftforge.common.util.ForgeDirection;
 import armory.Armory;
 import armory.core.BlockHelper;
 import armory.core.proxy.ClientProxy;
 import armory.lib.ArmoryNames;
-import armory.lib.ArmoryRef;
-import armory.tile_entity.ArmoryTE;
 import armory.tile_entity.smithing_furnace.TileSmithingFurnace;
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class SmithingFurnace extends ArmoryBlocks implements ITileEntityProvider
 {
@@ -66,6 +55,6 @@ public class SmithingFurnace extends ArmoryBlocks implements ITileEntityProvider
 	@Override
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par1, float par2, float par3, float par4)
 	{
-		player.openGui(Armory.instance, 1, world, x ,y, z); return true;
+		player.openGui(Armory.instance, 2, world, x ,y, z); return true;
 	}
 }

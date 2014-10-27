@@ -9,7 +9,7 @@ public class ArmoryRef
 	public static final String VERSION = "0.1";	
 	
 	public static final String CLIENT_PROXY = MOD_ID + ".core.proxy.ClientProxy";
-	public static final String COMMON_PROXY = MOD_ID + ".core.proxy.CommonProxy";
+	public static final String SERVER_PROXY = MOD_ID + ".core.proxy.ServerProxy";
 	
 	public static final String RESOURCES_PREFIX = MOD_ID.toLowerCase() + ":";
 	
@@ -17,13 +17,6 @@ public class ArmoryRef
 	public static final String BLOCK_TEXTURE_LOCATION = "textures/blocks/";
 	public static final String ITEM_TEXTURE_LOCATION = "textures/items/";
 	public static final String GUI_TEXTURE_LOCATION = "textures/gui/";
-	
-	//models//
-	public static final ResourceLocation SMITHING_FURNACE_MODEL = getResourceLocation(MOD_ID, MODELS_LOCATION + "smithing_furnace.obj");
-	public static final ResourceLocation SMITHING_FURNACE_TEXTURE = getResourceLocation(MOD_ID, BLOCK_TEXTURE_LOCATION + "smithing_furnace.png");
-	
-	public static final ResourceLocation PART_PLANNER_MODEL = getResourceLocation(MOD_ID, MODELS_LOCATION + "part_planner.obj");
-	public static final ResourceLocation PART_PLANNER_TEXTURE = getResourceLocation(MOD_ID, BLOCK_TEXTURE_LOCATION + "part_planner.png");
 		
 	//GUIs//
 	public static final ResourceLocation SMITHING_ANVIL_GUI = getResourceLocation(MOD_ID, GUI_TEXTURE_LOCATION + "smithing_anvil_gui.png");

@@ -20,7 +20,7 @@ public class ClientProxy extends CommonProxy
 	public static int partPlannerRenderID;
     
 	@Override
-    public void registerRendering()
+	public void registerRendering()
     {
 		oreBlockRenderID = RenderingRegistry.getNextAvailableRenderId();
 		smithingFurnaceRenderID = RenderingRegistry.getNextAvailableRenderId();
@@ -34,4 +34,18 @@ public class ClientProxy extends CommonProxy
 		ClientRegistry.bindTileEntitySpecialRenderer(PartPlannerDummyTE.class, new RenderPartPlanner());
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(BlockHelper.partPlanner), new ItemPartPlannerRenderer());
     }
+
+	@Override
+	public void registerEventHandlers()
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void playSound(String soundName, float xCoord, float yCoord, float zCoord, float volume, float pitch)
+	{
+		// TODO Auto-generated method stub
+		
+	}
 }

@@ -6,13 +6,9 @@ import armory.tile_entity.PartPlannerDummyTE;
 import armory.tile_entity.smithing_anvil.TileSmithingAnvil;
 import armory.tile_entity.smithing_furnace.TileSmithingFurnace;
 
-public class CommonProxy
-{
-	public void registerRendering(){}
-
-	public void registerSoundHandler(){}
-	
-    public void registerTileEntities()
+public abstract class CommonProxy implements IProxy
+{	
+	public void registerTileEntities()
     {
     	GameRegistry.registerTileEntity(ArmoryTE.class, "ArmoryTE");
     	

@@ -22,7 +22,7 @@ public class RenderSmithingFurnace extends TileEntitySpecialRenderer
 	
 	public RenderSmithingFurnace()
 	{
-		furnaceModel = AdvancedModelLoader.loadModel(ArmoryRef.SMITHING_FURNACE_MODEL);
+		furnaceModel = AdvancedModelLoader.loadModel(SMITHING_FURNACE_MODEL);
 	}
 	
 	@Override
